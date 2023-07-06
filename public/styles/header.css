@@ -1,0 +1,18 @@
+header {
+  align-items: center;
+  background-image: url("/images/brick-wall-1920x1080.png");
+    /* background-color: coral; */
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+  justify-content: center;
+  padding-top: 150px;
+  width: 100%;
+}
+header > div{
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
