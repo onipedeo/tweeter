@@ -1,7 +1,7 @@
 header {
   align-items: center;
   background-image: url("/images/brick-wall-1920x1080.png");
-    /* background-color: coral; */
+    background-color: coral;
   display: flex;
   flex-direction: column;
   height: 520px;
