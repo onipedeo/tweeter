@@ -73,3 +73,10 @@ nav {
  article span.images i:hover{
   color: orange;
  }
+
+ article > header > span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+ }
