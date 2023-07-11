@@ -36,3 +36,40 @@ nav {
   margin: auto;
  }
  
+ section #username {
+  color: rgb(185, 211, 219);
+ }
+
+ section.tweet-container {
+  border: 3px solid black;
+  margin: 30px 0px;
+  padding: 20px;
+ }
+
+ article > header, footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 800;
+ }
+
+ article > hr {
+  background-color: black;
+  height: 2px;
+ }
+
+ .images {
+  display: flex;
+  padding: auto;
+ }
+
+.images i {
+  padding: 7px;
+}
+ section.tweet-container:hover {
+  box-shadow: 5px 5px 5px black;
+ }
+
+ article span.images i:hover{
+  color: orange;
+ }
