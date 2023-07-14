@@ -61,6 +61,8 @@ $(document).ready(function() {
     event.preventDefault();
     const data = $('.post-tweet').serialize();
     $.post("/tweets", data).then(() => {
+      $('#tweet-text').val("");
+      $(".counter").text(140);
       loadTweets();
     });
   });
