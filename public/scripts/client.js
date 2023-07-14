@@ -55,17 +55,36 @@ $(document).ready(function() {
     });
   };
 
-  // renderTweets(tweetArticle);
+  //check if tweet is empty or over 140 characters
+  const tweetLen = () => {
+    const tweetText = $(".new-tweet textarea").val();
+    if (tweetText === '' || tweetText === null) {
+      alert("Tweet cannot be empty");
+      return false;
+    } else if (tweetText.length > 140) {
+      alert("Tweet content is too long");
+      return false;
+    } else {
+      return true;
+    }
+  };
+
 
   $('.post-tweet').on("submit", function(event) {
     event.preventDefault();
     const data = $('.post-tweet').serialize();
-    $.post("/tweets", data).then(() => {
-      $('#tweet-text').val("");
-      $(".counter").text(140);
-      loadTweets();
-    });
+    const isTweetValid = tweetLen();
+    if (isTweetValid) {
+      $.post("/tweets", data).then(() => {
+        //Clears the text in the input textarea
+        $('#tweet-text').val("");
+        //resets counter to 140(maxlen)
+        $(".counter").text(140);
+        loadTweets();
+      });
+    }
   });
+
 
   const loadTweets = function() {
 
