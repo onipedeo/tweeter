@@ -12,6 +12,13 @@ $(document).ready(function() {
     return timeago.format(timestamp);
   };
 
+  //Function to escape unsafe characters
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //Function to createTweet Element dynamically and append to the tweet section
   const createTweetElement = (tweetObject) => {
     const user = tweetObject.user;
@@ -28,7 +35,7 @@ $(document).ready(function() {
           <span id="username">${user.handle}</span>
         </header>
         <div>
-          <p>${content.text}</p>
+          <p>${escape(content.text)}</p>
         </div>
         <hr>
         <footer>
@@ -71,8 +78,11 @@ $(document).ready(function() {
 
 
   $('.post-tweet').on("submit", function(event) {
+    //prevents page from submitting and reloading
     event.preventDefault();
     const data = $('.post-tweet').serialize();
+
+    //checks if tweet is valid before posting.
     const isTweetValid = tweetLen();
     if (isTweetValid) {
       $.post("/tweets", data).then(() => {
@@ -86,6 +96,7 @@ $(document).ready(function() {
   });
 
 
+  //Ajax call request function to /tweets to get the tweets in the db.
   const loadTweets = function() {
 
     $.ajax({
@@ -100,5 +111,5 @@ $(document).ready(function() {
     });
 
   };
-
+  loadTweets();
 });
