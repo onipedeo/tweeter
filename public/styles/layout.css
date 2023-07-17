@@ -46,6 +46,10 @@ nav {
   padding: 20px;
  }
 
+ section article.tweet p {
+  word-wrap: break-word;
+ }
+
  article > header, footer {
   display: flex;
   flex-direction: row;
