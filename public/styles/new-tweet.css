@@ -21,6 +21,10 @@ button {
   color: #FFFFFF;
 }
 
+button:hover{
+    border-color: rgb(18, 76, 223);
+}
+
 .counterBlack {
   color: black;
 }

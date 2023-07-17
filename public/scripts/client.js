@@ -66,12 +66,16 @@ $(document).ready(function() {
   const tweetLen = () => {
     const tweetText = $(".new-tweet textarea").val();
     if (tweetText === '' || tweetText === null) {
-      alert("Tweet cannot be empty");
+      //removes exist error
+      $(".error").empty();
+      $(".error").text("🛑Tweet cannot be empty🛑").hide().delay().slideDown();
       return false;
     } else if (tweetText.length > 140) {
-      alert("Tweet content is too long");
+      $(".error").empty();
+      $(".error").text("🛑Tweet content is too long🛑").hide().delay().slideDown();
       return false;
     } else {
+      $(".error").slideUp();
       return true;
     }
   };

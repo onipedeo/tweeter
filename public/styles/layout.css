@@ -84,3 +84,12 @@ nav {
     align-items: center;
     gap: 10px;
  }
+
+ .error {
+  
+  color: tomato;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  width: fit-content;
+ }
