@@ -10,9 +10,9 @@ body > header {
   width: 100%;
 }
 header > div{
-align-items: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
