@@ -31,9 +31,10 @@ nav {
  }
 
  main {
-  width: 90vw;
+  width: 90vw; 
   background-color: inherit;
   margin: auto;
+  padding-top: 40px;
  }
  
  section #username {
@@ -93,3 +94,33 @@ nav {
   font-weight: 600;
   width: fit-content;
  }
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  
+  }
+  header.header, main{
+    margin-top: 200px;
+    margin-right: 20px;
+    margin-left: 60px;
+    padding: 20px;
+  }
+
+  main {
+  width: 60%;
+ 
+  }
+  header.header {
+  width: 30%;
+   }
+
+  main section.container {
+  width: 60%;
+  }
+
+#tweet-text {
+  width: 55%;
+  padding-top: 10px ;
+}
+}
